@@ -62,7 +62,6 @@ def get_mouth_roi(detector, frame):
     cy = (ymax + ymin) // 2
 
     # pad = 0.1
-    cv2.imwrite('mouth_before.jpg', frame[ymin:ymax, xmin:xmax, :])
     pad_x = int(mouth_w * 0.4)
     pad_x_beg = pad_x // 2
     pad_x_end = pad_x - pad_x_beg
@@ -73,7 +72,6 @@ def get_mouth_roi(detector, frame):
     ymin = max(0, cy - new_mouth_w // 2)
     ymax = min(height, cy + new_mouth_w // 2)
     mouth_roi = frame[ymin:ymax, xmin:xmax, :]
-    cv2.imwrite('mouth_after.jpg', mouth_roi)
     mouth_roi = cv2.resize(mouth_roi, (MOUTH_WIDTH, MOUTH_HEIGHT))
 
     mouth_crop_image = cv2.cvtColor(mouth_roi, cv2.COLOR_BGR2GRAY)
