@@ -144,8 +144,6 @@ if __name__ == '__main__':
 
     for path in video_paths:
         video = extract_opencv(path)
-        for i, frame in enumerate(video):
-            cv2.imwrite(f'mouth_{i+1}.jpg', frame)
 
         inputs = np.stack(video, 0) / 255.
         inputs = CenterCrop(inputs, (88, 88))
