@@ -5,7 +5,6 @@ import argparse
 from pathlib import Path
 
 import cv2
-import dlib
 import numpy as np
 import torch
 
