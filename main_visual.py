@@ -81,7 +81,6 @@ def test():
                 else:
                     y_v = video_model(video)
 
-
             v_acc.extend((y_v.argmax(-1) == label).cpu().numpy().tolist())
             toc = time.time()
             if(i_iter % 10 == 0):
@@ -174,7 +173,7 @@ def train():
 
             toc = time.time()
 
-            msg = 'epoch={},train_iter={}/{},eta={:.5f}'.format(epoch, tot_iter, len(loader), (toc-tic)*(len(loader)-i_iter)/3600.0)
+            msg = 'epoch={},train_iter={},eta={:.5f}'.format(epoch, tot_iter, (toc-tic)*(len(loader)-i_iter)/3600.0)
             for k, v in loss.items():
                 msg += ',{}={:.5f}'.format(k, v)
             msg = msg + str(',lr=' + str(show_lr(optim_video)))
@@ -184,7 +183,6 @@ def train():
             # if i_iter == len(loader) - 1 or (epoch == 0 and i_iter == 0):
 
             tot_iter += 1
-            break
         
         # Evaluation
         acc, msg = test()
