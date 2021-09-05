@@ -28,7 +28,7 @@ For more details, please check `main_visual.py` script.
 python main_visual.py --save_prefix checkpoints/av-baseline \
                     --dataset av \
                     --data-dir datasets/avletters_digits_npy_gray_pkl_jpeg \
-                    --n_class 35 \
+                    --n_class 36 \
                     --batch_size 32 \
                     --se \
                     --label_smooth \
@@ -41,7 +41,7 @@ You can evaluate the trained model easily.
 ```
 python eval.py --dataset av \
                 --data-dir datasets/avletters_digits_npy_gray_pkl_jpeg \
-                --n_class 35 \
+                --n_class 36 \
                 --weights checkpoints/WEIGHTS.pt \
                 --se \
                 --label_smooth \
@@ -53,7 +53,7 @@ python eval.py --dataset av \
 You can test on a single input video file or a folder contains video files.
 ```
 python demo.py --weights checkpoints/WEIGHTS.pt \
-                --n_class 35 \
+                --n_class 36 \
                 --se \
                 --label_smooth \
                 --mixup \
