@@ -21,6 +21,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--gpus', type=str, default='0',
                         help='GPUs would be used. e.g 0,1,2,3')
+    parser.add_argument('--batch_size', type=int, default=400,
+                        help='Batch size')
     parser.add_argument('--n_class', type=int, required=True, help='Number of classes')
     parser.add_argument('--num_workers', type=int, default=0,
                         help='Number of data loader workers')
